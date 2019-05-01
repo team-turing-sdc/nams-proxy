@@ -1,3 +1,4 @@
+const nr = require('newrelic');
 const express = require('express');
 const path = require('path');
 const proxy = require('http-proxy-middleware');
@@ -24,26 +25,26 @@ app.listen(PORT, () => {
 
 
 
-// video carousel
-const videoCarouselOptions = {
-  target: 'http://localhost:3333',
-  // changeOrigin: true
-};
-const videoCarouselProxy = proxy(videoCarouselOptions);
-app.use('/associatedVideos', videoCarouselProxy);
+// // video carousel
+// const videoCarouselOptions = {
+//   target: 'http://localhost:3333',
+//   // changeOrigin: true
+// };
+// const videoCarouselProxy = proxy(videoCarouselOptions);
+// app.use('/associatedVideos', videoCarouselProxy);
 
 
-const castCrewOptions = {
-  target: 'http://localhost:2002',
-  // changeOrigin: true
-};
-const castCrewProxy = proxy(castCrewOptions);
-app.use('/actors', castCrewProxy);
+// const castCrewOptions = {
+//   target: 'http://localhost:2002',
+//   // changeOrigin: true
+// };
+// const castCrewProxy = proxy(castCrewOptions);
+// app.use('/actors', castCrewProxy);
 
 
-const movieInfoOptions = {
-  target: 'http://localhost:2000',
-  // changeOrigin: true
-};
-const movieInfoProxy = proxy(movieInfoOptions);
-app.use('/movies', movieInfoProxy);
+// const movieInfoOptions = {
+//   target: 'http://localhost:2000',
+//   // changeOrigin: true
+// };
+// const movieInfoProxy = proxy(movieInfoOptions);
+// app.use('/movies', movieInfoProxy);
